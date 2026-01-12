@@ -47,31 +47,45 @@ export default function Projects() {
             return (
               <div
                 key={index}
-                className={`border ${borderColor} bg-white/5 backdrop-blur-md p-6 sm:p-8 ${hoverBorder} hover:bg-white/10 transition-all duration-300 group cursor-pointer font-mono rounded-xl shadow-lg shadow-black/20`}
+                className={`border ${borderColor} p-6 sm:p-8 ${hoverBorder} transition-all duration-300 group cursor-pointer font-mono rounded-xl shadow-2xl relative overflow-hidden`}
                 style={{
-                  background: 'rgba(0, 0, 0, 0.3)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
+                  background: isGreen 
+                    ? 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)'
+                    : 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)',
+                  backdropFilter: 'blur(20px) saturate(180%)',
+                  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
                 }}
               >
-                <div className="mb-2 text-white/60 text-xs">
-                  <span className={isGreen ? 'text-green-400' : 'text-blue-400'}>[</span>
-                  <span className="text-white/60">project-{index + 1}</span>
-                  <span className={isGreen ? 'text-green-400' : 'text-blue-400'}>]</span>
-                </div>
-                <h3 className={`text-xl sm:text-2xl font-semibold ${titleColor} mb-3 ${hoverTitle} transition-colors`}>
-                  {project.title}
-                </h3>
-                <p className="text-white/70 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs sm:text-sm px-2 sm:px-3 py-1 bg-white/5 text-white/60 border border-white/10 hover:border-white/30 transition-colors font-mono rounded-md"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                {/* Glassmorphism overlay effect */}
+                <div 
+                  className="absolute inset-0 rounded-xl opacity-50"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+                
+                <div className="relative z-10">
+                  <div className="mb-2 text-white/60 text-xs">
+                    <span className={isGreen ? 'text-green-400' : 'text-blue-400'}>[</span>
+                    <span className="text-white/60">project-{index + 1}</span>
+                    <span className={isGreen ? 'text-green-400' : 'text-blue-400'}>]</span>
+                  </div>
+                  <h3 className={`text-xl sm:text-2xl font-semibold ${titleColor} mb-3 ${hoverTitle} transition-colors`}>
+                    {project.title}
+                  </h3>
+                  <p className="text-white/80 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs sm:text-sm px-2 sm:px-3 py-1 bg-white/10 text-white/70 border border-white/20 hover:border-white/40 transition-colors font-mono rounded-md backdrop-blur-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             );

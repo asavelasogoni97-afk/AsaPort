@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [typedText, setTypedText] = useState('');
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
   const heroRef = useRef<HTMLElement>(null);
   const fullText = 'Nomaseko';
   const subtitle = 'IT Graduate & Quality Engineer';
@@ -34,6 +35,25 @@ export default function Hero() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const heroHeight = heroRef.current?.offsetHeight || 0;
+      
+      // Hide scroll indicator when scrolled past hero section or when at bottom
+      if (scrollY > heroHeight * 0.3 || scrollY + window.innerHeight >= document.documentElement.scrollHeight - 100) {
+        setShowScrollIndicator(false);
+      } else {
+        setShowScrollIndicator(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -134,14 +154,18 @@ export default function Hero() {
             </button>
           </a>
         </div>
+      </div>
 
-        {/* Terminal scroll indicator - Fixed at bottom */}
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 font-mono">
-          <div className="flex flex-col items-center space-y-2 animate-bounce">
-            <span className="text-white/60 text-xs tracking-widest">SCROLL ↓</span>
-            <div className="w-6 h-10 border-2 border-green-500/50 rounded-lg flex justify-center items-start pt-1">
-              <div className="w-1 h-3 bg-green-500 animate-pulse rounded-full" />
-            </div>
+      {/* Terminal scroll indicator - Only shows at top, hides when scrolling */}
+      <div 
+        className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 font-mono transition-opacity duration-500 ${
+          showScrollIndicator ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col items-center space-y-2 animate-bounce">
+          <span className="text-white/60 text-xs tracking-widest">SCROLL ↓</span>
+          <div className="w-6 h-10 border-2 border-green-500/50 rounded-lg flex justify-center items-start pt-1">
+            <div className="w-1 h-3 bg-green-500 animate-pulse rounded-full" />
           </div>
         </div>
       </div>
