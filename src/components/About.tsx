@@ -6,20 +6,20 @@ export default function About() {
       <div className="container mx-auto max-w-5xl">
         <div className="font-mono mb-12 sm:mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            <span className="text-green-400">&gt;</span>
-            <span className="text-blue-400"> about</span>
+            <span className="text-pink-400">&gt;</span>
+            <span className="text-purple-400"> about</span>
             <span className="text-white/60">.me</span>
           </h2>
-          <div className="text-green-400 text-sm sm:text-base">
-            <span className="text-white/60">{'//'}</span> About Nomaseko
+          <div className="text-pink-400 text-sm sm:text-base">
+            <span className="text-white/60">{'//'}</span> About Asavela
           </div>
         </div>
         
         <div className="space-y-6 sm:space-y-8 text-white/80 text-base sm:text-lg md:text-xl leading-relaxed font-mono">
           <div 
-            className="border-l-4 border-green-500 p-4 sm:p-6 rounded-r-xl shadow-2xl relative overflow-hidden"
+            className="border-l-4 border-pink-500 p-4 sm:p-6 rounded-r-xl shadow-2xl relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)',
+              background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)',
               backdropFilter: 'blur(20px) saturate(180%)',
               WebkitBackdropFilter: 'blur(20px) saturate(180%)',
               boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
@@ -38,9 +38,9 @@ export default function About() {
           </div>
           
           <div 
-            className="border-l-4 border-blue-500 p-4 sm:p-6 rounded-r-xl shadow-2xl relative overflow-hidden"
+            className="border-l-4 border-purple-500 p-4 sm:p-6 rounded-r-xl shadow-2xl relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)',
+              background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)',
               backdropFilter: 'blur(20px) saturate(180%)',
               WebkitBackdropFilter: 'blur(20px) saturate(180%)',
               boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
@@ -65,10 +65,10 @@ export default function About() {
             <div className="space-y-4">
               <div>
                 <h4 className="text-green-400 mb-3 text-sm sm:text-base font-semibold">
-                  <span className="text-white/60">{'//'}</span> Programming Languages
+                  <span className="text-white/60">{'//'}</span> Certifications
                 </h4>
                 <div className="flex flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
-                  {['Java', 'Python', 'JavaScript', 'C++', 'C#', 'SQL', 'TypeScript'].map((skill) => (
+                  {['AWS Cloud Practitioner', 'Microsoft PL-900', 'Java', 'Python', 'JavaScript', 'SQL'].map((skill) => (
                     <span
                       key={skill}
                       className="px-4 sm:px-6 py-2 sm:py-3 border border-green-500/30 text-green-400 hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 text-sm sm:text-base font-mono rounded-lg backdrop-blur-sm bg-white/5"

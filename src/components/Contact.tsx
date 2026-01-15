@@ -17,7 +17,7 @@ export default function Contact() {
     // Using mailto as fallback, but also providing better UX
     const subject = encodeURIComponent(`Contact from ${formData.name}`);
     const body = encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name}\nEmail: ${formData.email}`);
-    const mailtoLink = `mailto:nomasekomahlangu@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:asavelasogoni97@gmail.com?subject=${subject}&body=${body}`;
 
     // Try to open email client
     window.location.href = mailtoLink;
@@ -42,19 +42,19 @@ export default function Contact() {
       <div className="container mx-auto max-w-2xl">
         <div className="font-mono mb-12 sm:mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            <span className="text-green-400">&gt;</span>
-            <span className="text-blue-400"> contact</span>
+            <span className="text-pink-400">&gt;</span>
+            <span className="text-purple-400"> contact</span>
             <span className="text-white/60">.me</span>
           </h2>
-          <div className="text-green-400 text-sm sm:text-base">
+          <div className="text-pink-400 text-sm sm:text-base">
             <span className="text-white/60">{'//'}</span> Get in touch
           </div>
         </div>
         
         <div 
-          className="border border-green-500/30 p-6 sm:p-8 md:p-10 font-mono rounded-xl shadow-2xl relative overflow-hidden"
+          className="border border-pink-500/30 p-6 sm:p-8 md:p-10 font-mono rounded-xl shadow-2xl relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)',
+            background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%)',
             backdropFilter: 'blur(20px) saturate(180%)',
             WebkitBackdropFilter: 'blur(20px) saturate(180%)',
             boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
@@ -71,7 +71,7 @@ export default function Contact() {
           
           <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block text-green-400 mb-2 text-sm sm:text-base">
+              <label htmlFor="name" className="block text-pink-400 mb-2 text-sm sm:text-base">
                 <span className="text-white/60">$</span> name
               </label>
               <input
@@ -80,13 +80,13 @@ export default function Contact() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-black/30 border border-green-500/30 text-white focus:border-green-500 focus:outline-none transition-colors text-sm sm:text-base font-mono rounded-lg backdrop-blur-sm"
+                className="w-full px-4 py-3 bg-black/30 border border-pink-500/30 text-white focus:border-pink-500 focus:outline-none transition-colors text-sm sm:text-base font-mono rounded-lg backdrop-blur-sm"
                 placeholder="Enter your name..."
                 required
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-blue-400 mb-2 text-sm sm:text-base">
+              <label htmlFor="email" className="block text-purple-400 mb-2 text-sm sm:text-base">
                 <span className="text-white/60">$</span> email
               </label>
               <input
@@ -95,13 +95,13 @@ export default function Contact() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-black/30 border border-blue-500/30 text-white focus:border-blue-500 focus:outline-none transition-colors text-sm sm:text-base font-mono rounded-lg backdrop-blur-sm"
+                className="w-full px-4 py-3 bg-black/30 border border-purple-500/30 text-white focus:border-purple-500 focus:outline-none transition-colors text-sm sm:text-base font-mono rounded-lg backdrop-blur-sm"
                 placeholder="your.email@example.com"
                 required
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-green-400 mb-2 text-sm sm:text-base">
+              <label htmlFor="message" className="block text-pink-400 mb-2 text-sm sm:text-base">
                 <span className="text-white/60">$</span> message
               </label>
               <textarea
@@ -110,7 +110,7 @@ export default function Contact() {
                 rows={6}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-black/30 border border-green-500/30 text-white focus:border-green-500 focus:outline-none transition-colors resize-none text-sm sm:text-base font-mono rounded-lg backdrop-blur-sm"
+                className="w-full px-4 py-3 bg-black/30 border border-pink-500/30 text-white focus:border-pink-500 focus:outline-none transition-colors resize-none text-sm sm:text-base font-mono rounded-lg backdrop-blur-sm"
                 placeholder="Enter your message..."
                 required
               />
@@ -128,7 +128,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full px-8 py-3 sm:py-4 border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black transition-all duration-300 font-semibold tracking-wide text-sm sm:text-base font-mono rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-8 py-3 sm:py-4 border-2 border-pink-500 text-pink-400 hover:bg-pink-500 hover:text-black transition-all duration-300 font-semibold tracking-wide text-sm sm:text-base font-mono rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === 'sending' ? (
                 <span className="flex items-center justify-center gap-2">
@@ -136,7 +136,7 @@ export default function Contact() {
                 </span>
               ) : (
                 <>
-                  <span className="text-green-400">$</span> send_message
+                  <span className="text-pink-400">$</span> send_message
                 </>
               )}
             </button>
@@ -146,26 +146,37 @@ export default function Contact() {
         <div className="mt-12 space-y-4 font-mono">
           <div className="text-center space-y-2 text-white/80">
             <p className="text-sm sm:text-base">
-              <span className="text-green-400">$</span> phone: <a href="tel:+27726667449" className="text-white/60 hover:text-green-400 transition-colors">072-666-7449</a>
+              <span className="text-pink-400">$</span> phone: <a href="tel:+27630872972" className="text-white/60 hover:text-pink-400 transition-colors">063-087-2972</a>
             </p>
             <p className="text-sm sm:text-base">
-              <span className="text-blue-400">$</span> email: <a href="mailto:nomasekomahlangu@gmail.com" className="text-white/60 hover:text-blue-400 transition-colors">nomasekomahlangu@gmail.com</a>
+              <span className="text-purple-400">$</span> whatsapp: <a href="https://wa.me/27630872972" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-pink-400 transition-colors">063-087-2972</a>
+            </p>
+            <p className="text-sm sm:text-base">
+              <span className="text-pink-400">$</span> email: <a href="mailto:asavelasogoni97@gmail.com" className="text-white/60 hover:text-purple-400 transition-colors">asavelasogoni97@gmail.com</a>
             </p>
           </div>
           <div className="text-center space-x-4 sm:space-x-6 pt-4">
             <a 
-              href="https://www.linkedin.com/in/nomaseko-mahlangu-0b4171178/" 
+              href="https://www.linkedin.com/in/asavela-sogoni/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-green-400 transition-colors text-sm sm:text-base"
+              className="text-white/70 hover:text-pink-400 transition-colors text-sm sm:text-base"
             >
-              <span className="text-green-400">$</span> linkedin
+              <span className="text-pink-400">$</span> linkedin
             </a>
             <a 
-              href="mailto:nomasekomahlangu@gmail.com" 
-              className="text-white/70 hover:text-blue-400 transition-colors text-sm sm:text-base"
+              href="https://wa.me/27630872972" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-pink-400 transition-colors text-sm sm:text-base"
             >
-              <span className="text-blue-400">$</span> email
+              <span className="text-pink-400">$</span> whatsapp
+            </a>
+            <a 
+              href="mailto:asavelasogoni97@gmail.com" 
+              className="text-white/70 hover:text-purple-400 transition-colors text-sm sm:text-base"
+            >
+              <span className="text-purple-400">$</span> email
             </a>
           </div>
         </div>

@@ -7,8 +7,8 @@ export default function Hero() {
   const [typedText, setTypedText] = useState('');
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
   const heroRef = useRef<HTMLElement>(null);
-  const fullText = 'Nomaseko';
-  const subtitle = 'IT Graduate & Quality Engineer';
+  const fullText = 'Asavela';
+  const subtitle = 'IT Graduate & Cloud Practitioner';
 
   useEffect(() => {
     // Typewriter effect
@@ -72,7 +72,7 @@ export default function Hero() {
       <div 
         className="absolute w-96 h-96 rounded-full opacity-20 blur-3xl transition-all duration-1000 ease-out pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.6), transparent)',
+          background: 'radial-gradient(circle, rgba(236, 72, 153, 0.6), transparent)',
           left: `${mousePosition.x}%`,
           top: `${mousePosition.y}%`,
           transform: 'translate(-50%, -50%)',
@@ -81,7 +81,7 @@ export default function Hero() {
       <div 
         className="absolute w-72 h-72 rounded-full opacity-20 blur-3xl transition-all duration-1500 ease-out pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.6), transparent)',
+          background: 'radial-gradient(circle, rgba(168, 85, 247, 0.6), transparent)',
           left: `${100 - mousePosition.x}%`,
           top: `${100 - mousePosition.y}%`,
           transform: 'translate(-50%, -50%)',
@@ -100,14 +100,14 @@ export default function Hero() {
                 key={index}
                 className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold inline-block font-mono ${
                   index < typedText.length 
-                    ? 'text-green-400' 
+                    ? 'text-pink-400' 
                     : index === typedText.length 
-                    ? 'text-green-400 animate-pulse' 
+                    ? 'text-pink-400 animate-pulse' 
                     : 'text-white/20'
                 }`}
                 style={{
                   textShadow: index < typedText.length 
-                    ? '0 0 20px rgba(34, 197, 94, 0.8), 0 0 40px rgba(34, 197, 94, 0.4)' 
+                    ? '0 0 20px rgba(236, 72, 153, 0.8), 0 0 40px rgba(236, 72, 153, 0.4)' 
                     : 'none',
                   animation: index < typedText.length ? `glow ${2}s ease-in-out infinite` : 'none',
                 }}
@@ -124,9 +124,9 @@ export default function Hero() {
         {/* Terminal prompt style subtitle */}
         <div className="h-8 md:h-12 font-mono">
           <p className="text-white/90 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light tracking-wider">
-            <span className="text-green-400">&gt;</span>{' '}
+            <span className="text-purple-400">&gt;</span>{' '}
             <span className="inline-block">{subtitle}</span>
-            <span className="inline-block w-2 h-6 md:h-8 bg-green-500 ml-2 animate-pulse" />
+            <span className="inline-block w-2 h-6 md:h-8 bg-purple-500 ml-2 animate-pulse" />
           </p>
         </div>
 

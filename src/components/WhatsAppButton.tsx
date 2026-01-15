@@ -1,7 +1,7 @@
 'use client';
 
 export default function WhatsAppButton() {
-  const phoneNumber = '27726667449'; // South African format without + or spaces
+  const phoneNumber = '27630872972'; // South African format without + or spaces
   const message = encodeURIComponent('Hello! I would like to get in touch with you.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

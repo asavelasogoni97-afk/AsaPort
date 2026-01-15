@@ -26,12 +26,12 @@ export default function Navbar() {
     <>
       {/* Desktop Navbar */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 font-mono ${
-        isScrolled ? 'backdrop-blur-md bg-black/80 border-b border-green-500/30' : 'bg-transparent'
+        isScrolled ? 'backdrop-blur-md bg-black/80 border-b border-pink-500/30' : 'bg-transparent'
       }`}>
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl sm:text-2xl font-bold">
-            <span className="text-green-400">&gt;</span>
-            <span className="text-blue-400"> Nomaseko</span>
+            <span className="text-pink-400">&gt;</span>
+            <span className="text-purple-400"> Asavela</span>
             <span className="text-white/60">.dev</span>
           </div>
           <div className="hidden md:flex space-x-8">
