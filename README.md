@@ -1,4 +1,4 @@
-# nomaseko Portfolio
+# Asavela Portfolio
 
 A stunning portfolio website built with Next.js, React, and Tailwind CSS featuring an animated galaxy background with gold, black, and silver color scheme.
 
